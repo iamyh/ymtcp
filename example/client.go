@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/asdog/ymtcp"
 	"net"
 	"time"
-	"ymtcp"
 )
 
 func main() {

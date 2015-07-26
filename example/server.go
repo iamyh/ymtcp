@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"github.com/asdog/ymtcp"
 	"log"
 	"os"
 	"os/signal"
 	"runtime"
 	"syscall"
-	"ymtcp"
 )
 
 type CallBack struct{}
