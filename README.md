@@ -10,7 +10,7 @@
 
 实现了一个简单的echo例子，也实现了平滑重启;
 
-go run server
+go run server.go
 
 go run client.go
 
