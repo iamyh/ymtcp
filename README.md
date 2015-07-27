@@ -9,8 +9,10 @@
 # example 
 
 实现了一个简单的echo例子，也实现了平滑重启;
-go run server;go run client.go
 
+go run server
+
+go run client.go
 
 # 鸣谢
 
