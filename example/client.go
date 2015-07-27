@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/asdog/ymtcp"
+	"github.com/iamyh/ymtcp"
 	"net"
 	"time"
 )
