@@ -4,6 +4,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"io"
+	"log"
 	"net"
 	"runtime"
 )
@@ -52,7 +53,7 @@ func (ep *EchoProtocolImpl) ReadBytes(conn *net.TCPConn) ([]byte, error) {
 
 				return string(buf)
 			}
-			fmt.Println(st(false))
+			log.Println(st(false))
 		}
 
 	}()

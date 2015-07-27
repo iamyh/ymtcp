@@ -2,6 +2,7 @@ package ymtcp
 
 import (
 	"fmt"
+	"log"
 	"net"
 	"runtime"
 	"sync"
@@ -74,7 +75,7 @@ func (c *Conn) ReadInLoop() {
 	var err error
 	defer func() {
 		if err != nil {
-			fmt.Println("ReadInLoop occur err:", err)
+			log.Println("ReadInLoop occur err:", err)
 		}
 
 		if x := recover(); x != nil {
@@ -96,7 +97,7 @@ func (c *Conn) ReadInLoop() {
 				return string(buf)
 			}
 
-			fmt.Println(st(false))
+			log.Println(st(false))
 		}
 
 		c.Close()
@@ -127,7 +128,7 @@ func (c *Conn) WriteInLoop() {
 
 	defer func() {
 		if err != nil {
-			fmt.Println("WriteInLoop occur err:", err)
+			log.Println("WriteInLoop occur err:", err)
 		}
 
 		if x := recover(); x != nil {
@@ -149,7 +150,7 @@ func (c *Conn) WriteInLoop() {
 				return string(buf)
 			}
 
-			fmt.Println(st(false))
+			log.Println(st(false))
 		}
 
 		c.Close()
@@ -177,7 +178,7 @@ func (c *Conn) CallBackInLoop() {
 
 	defer func() {
 		if err != nil {
-			fmt.Println("CallBackInLoop occur err:", err)
+			log.Println("CallBackInLoop occur err:", err)
 		}
 
 		if x := recover(); x != nil {
@@ -199,7 +200,7 @@ func (c *Conn) CallBackInLoop() {
 				return string(buf)
 			}
 
-			fmt.Println(st(false))
+			log.Println(st(false))
 		}
 
 		c.Close()

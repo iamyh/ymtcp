@@ -20,7 +20,7 @@ func (this *CallBack) ConnectCome(c *ymtcp.Conn) bool {
 
 func (this *CallBack) MessageCome(c *ymtcp.Conn, bytes []byte) error {
 	addr := c.GetConnRemoteAddr()
-	fmt.Printf("message come from:[%s] [%s]\n", addr.String(), string(bytes))
+	log.Printf("message come from:[%s] [%s]\n", addr.String(), string(bytes))
 	buff, err := ymtcp.MakePacket(bytes)
 	if err != nil {
 		return err
@@ -32,7 +32,7 @@ func (this *CallBack) MessageCome(c *ymtcp.Conn, bytes []byte) error {
 
 func (this *CallBack) CloseCome(c *ymtcp.Conn) {
 	addr := c.GetConnRemoteAddr()
-	fmt.Println("conntion close:", addr.String())
+	log.Println("conntion close:", addr.String())
 }
 
 func main() {
@@ -57,7 +57,7 @@ func main() {
 	}
 
 	go srv.Service()
-	fmt.Println("listen:", config.Port)
+	log.Println("listen:", config.Port)
 
 	chanSignal := make(chan os.Signal)
 	signal.Notify(chanSignal, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM)

@@ -2,6 +2,7 @@ package ymtcp
 
 import (
 	"fmt"
+	"log"
 	"net"
 	"os"
 	"strconv"
@@ -78,7 +79,7 @@ func (s *TcpService) Service() {
 		conn, err := s.listener.AcceptTCP()
 		if err != nil {
 			if err, ok := err.(net.Error); ok && err.Timeout() {
-				fmt.Println("stop tcp accept tpc connection")
+				log.Println("stop tcp accept tpc connection")
 			}
 
 			continue
