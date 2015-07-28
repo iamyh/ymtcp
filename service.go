@@ -82,7 +82,7 @@ func (s *TcpService) Service() {
 				log.Println("stop tcp accept tpc connection")
 			}
 
-			continue
+			return
 		}
 
 		//run
